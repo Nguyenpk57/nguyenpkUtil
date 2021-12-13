@@ -8,7 +8,7 @@ package com.util.func;
 import com.util.bean.FileBean;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
-import com.util.result.Result;
+import com.util.bean.Result;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;

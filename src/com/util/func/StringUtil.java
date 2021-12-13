@@ -6,7 +6,6 @@
 package com.util.func;
 
 import java.text.MessageFormat;
-import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.Random;
 import org.apache.commons.lang3.StringUtils;

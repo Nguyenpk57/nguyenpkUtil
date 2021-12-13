@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.result;
+package com.util.bean;
 
-import com.util.bean.Constants;
 import com.util.func.MessageUtil;
-import com.util.bean.Stack;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;

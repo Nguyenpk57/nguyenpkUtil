@@ -5,6 +5,7 @@
  */
 package com.util.func;
 
+import com.util.bean.Constants;
 import com.util.bean.MessageArgument;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
@@ -72,7 +73,7 @@ public class MessageUtil {
     }
 
     private String getLanguageFile(String language) {
-        return new StringBuilder().append(ResourceUtil.getInstance().getResourceDefault("language.file.path"))
+        return new StringBuilder().append(ResourceUtil.getInstance().getResourceDefault(Constants.LANGUAGE_FILE_PATH))
                 .append(localeSeparator)
                 .append(StringUtils.trim(language)).toString();
     }

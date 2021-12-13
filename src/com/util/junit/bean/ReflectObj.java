@@ -5,24 +5,16 @@
  */
 package com.util.junit.bean;
 
-import com.util.bean.Result;
 import lombok.Getter;
 import lombok.Setter;
 
 /**
+ *
  * @author nguyenpk
- * @since 2021-10-21
  */
 @Getter
 @Setter
-public class ResponseObj extends Result {
-
-    String name;
-
-    public ResponseObj() {
-    }
-
-    public ResponseObj(Result rs) {
-        super(rs);
-    }
+public class ReflectObj {
+    private String name;
+    private ReflectInnerObj reflectInnerObj;
 }

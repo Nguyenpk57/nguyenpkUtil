@@ -21,4 +21,7 @@ public class Constants {
     public static final String LANGUAGE_EN = "en";
     public static final String LANGUAGE_ES = "es";
 
+    public static final String LANGUAGE_FILE_PATH = "language.file.path";
+    public static final String USE_CACHE_DATA = "use_cache_data";
+    
 }
