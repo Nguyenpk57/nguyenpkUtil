@@ -20,12 +20,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import org.apache.commons.lang3.StringUtils;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
 /**
  * @author nguyenpk
@@ -653,7 +650,8 @@ public class FileUtils {
             // Reading a file from file system
             byte fileData[] = new byte[(int) file.length()];
             imageInFile.read(fileData);
-            base64File = new BASE64Encoder().encode(fileData);
+            base64File = Base64.getEncoder().encodeToString(fileData);
+
         } catch (FileNotFoundException e) {
             System.out.println("File not found" + e);
         } catch (IOException ioe) {
