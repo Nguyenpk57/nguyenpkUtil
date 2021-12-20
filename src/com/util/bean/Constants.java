@@ -14,6 +14,7 @@ public class Constants {
     public class Config {
         public static final String DEFAULT_BUNDLE = "com/util/properties/config";
         public static final String DEFAULT_PROPERTIES = "com/util/properties/config.properties";
+        public static final String DOM_CONFIGURATOR_LOG_PATH =  "nguyenpkUtil/src/com/util/logger/export/config/log4j.xml";
     }
 
     public static final String DEFAULT_LANGUAGE = "en";
@@ -23,5 +24,7 @@ public class Constants {
 
     public static final String LANGUAGE_FILE_PATH = "language.file.path";
     public static final String USE_CACHE_DATA = "use_cache_data";
-    
+
+    public static final String SEPARATE_TRANSACTION_LOG = "&&&&";
+
 }

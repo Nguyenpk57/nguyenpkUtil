@@ -45,6 +45,8 @@ public interface ILogger {
 
     void infos(Object... values);
 
+    void infosTransaction(Object... values);
+
     void infos(Throwable t, Object... values);
 
     void warns(Object... values);

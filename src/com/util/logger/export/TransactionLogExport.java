@@ -1,22 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.util.junit;
+package com.util.logger.export;
 
 import com.util.api.rest.IRequest;
 import com.util.api.rest.RequestImpl;
+import com.util.func.DateTimeUtil;
 import com.util.func.GsonUtil;
 import com.util.junit.bean.ApiRestTestResponse;
+import com.util.logger.ILogger;
+import com.util.logger.LoggerImpl;
 
+import java.util.Date;
 import java.util.HashMap;
 
-/**
- * @author nguyenpk
- * @since 2021-10-21
- */
-public class ApiRestTest {
+public class TransactionLogExport {
+
+    private static ILogger logger = LoggerImpl.getInstance(TransactionLogExport.class);
 
     /**
      * URL: http://10.121.14.195:8054/mibitel/anni7Th/buyPackageLife
@@ -28,19 +25,30 @@ public class ApiRestTest {
      * RESPONSE: { "responseCode": 0, "responseMessage":"Success", "responseError": [] }
      */
     public static void main(String[] args) throws Exception {
-        IRequest request = new RequestImpl();
         HashMap entity = new HashMap();
         entity.put("msisdn", "910248192");
         entity.put("packageCode", "ANI10");
         entity.put("privateKey", "gSmP5[k'j3S(A%z4");
 
-        String response = request
+        String request = GsonUtil.getInstance().to(entity);
+        String startDate = DateTimeUtil.getInstance().formatddMMyyyyHHmmss(new Date());
+        Long startTime = System.currentTimeMillis();
+
+        String response = new RequestImpl()
                 .setUrl("http://10.121.14.195:8054/mibitel/anni7Th/buyPackageLife")
                 .setMethod(IRequest.POST)
                 .setHeader("Content-Type", "application/json")
                 .setEntity(GsonUtil.getInstance().to(entity))
                 .execute();
         ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtil.getInstance().from(response, ApiRestTestResponse.class);
-        System.out.println("ApiRestTest responseCode: " + GsonUtil.getInstance().to(resObj));
+
+        String endDate = DateTimeUtil.getInstance().formatddMMyyyyHHmmss(new Date());
+        Long elapsedTime = System.currentTimeMillis() - startTime;
+
+        exportTransactionLogs(request, response, startDate, endDate, elapsedTime);
+    }
+
+    public static void exportTransactionLogs(String request, String response, String startDate, String endDate, Long elapsedTime) {
+        logger.infosTransaction(request, response, startDate, endDate, elapsedTime);
     }
 }

@@ -5,17 +5,19 @@
  */
 package com.util.logger;
 
+import com.util.bean.Constants;
 import com.util.bean.Stack;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.extras.DOMConfigurator;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.time.DateFormatUtils;
-import org.apache.log4j.Logger;
 
 /**
- *
  * @author nguyenpk
  */
 public class LoggerImpl implements ILogger {
@@ -28,11 +30,13 @@ public class LoggerImpl implements ILogger {
     protected boolean print = true;
 
     private LoggerImpl() {
+        DOMConfigurator.configure(Constants.Config.DOM_CONFIGURATOR_LOG_PATH);
         name = this.getClass().getName();
         this.logger = Logger.getLogger(name);
     }
 
     private LoggerImpl(String logger) {
+        DOMConfigurator.configure(Constants.Config.DOM_CONFIGURATOR_LOG_PATH);
         name = logger;
         this.logger = Logger.getLogger(name);
     }
@@ -173,6 +177,13 @@ public class LoggerImpl implements ILogger {
     }
 
     @Override
+    public void infosTransaction(Object... values) {
+        String log = catchLogTransaction(values);
+        this.logger.info(log);
+        print(log);
+    }
+
+    @Override
     public void infos(Throwable t, Object... values) {
         String log = new Stack().catchInfo() + ":" + catchLog(values);
         this.logger.info(log, t);
@@ -248,6 +259,21 @@ public class LoggerImpl implements ILogger {
         }
         result = strs + "|";
         return result;
+    }
+
+    private String catchLogTransaction(Object... values) {
+        StringBuilder result = new StringBuilder();
+        if (values == null) {
+            return StringUtils.EMPTY;
+        }
+        int length = values.length;
+        if (length == 0) {
+            return StringUtils.EMPTY;
+        }
+        for (int i = 0; i < values.length; i++) {
+            result.append(values[i]).append(Constants.SEPARATE_TRANSACTION_LOG);
+        }
+        return result.toString();
     }
     //</editor-fold>
 
