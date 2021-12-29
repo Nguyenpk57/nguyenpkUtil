@@ -5,14 +5,14 @@
  */
 package com.util.api.rest;
 
-import com.util.func.StringUtil;
+import com.util.func.StringUtils;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
+
 import org.apache.http.HttpHost;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
@@ -202,7 +202,7 @@ public class RequestImpl extends BaseRequest {
             sb.append(name).append("={").append(i++).append("}");
             values.add((String) params.get(name));
         }
-        url = StringUtil.getInstance().getFormat(url + sb.toString()).format(values.toArray());
+        url = StringUtils.getInstance().getFormat(url + sb.toString()).format(values.toArray());
         return url;
     }
 
@@ -219,7 +219,7 @@ public class RequestImpl extends BaseRequest {
         if (params == null || params.isEmpty()) {
             return url;
         }
-        url = StringUtil.getInstance().getFormat(url).format(params.toArray());
+        url = StringUtils.getInstance().getFormat(url).format(params.toArray());
         return url;
     }
 
@@ -228,7 +228,7 @@ public class RequestImpl extends BaseRequest {
         if (proxy == null) {
             return;
         }
-        String host = StringUtils.trim((String) proxy.get("host"));
+        String host = org.apache.commons.lang3.StringUtils.trim((String) proxy.get("host"));
         if (host == null || host.isEmpty()) {
             return;
         }
@@ -248,7 +248,7 @@ public class RequestImpl extends BaseRequest {
     }
 
     private void buildEntity() {
-        String entity = StringUtils.trim((String) properties.get(ENTITY));
+        String entity = org.apache.commons.lang3.StringUtils.trim((String) properties.get(ENTITY));
         if (entity == null || entity.isEmpty()) {
             return;
         }

@@ -5,7 +5,7 @@
  */
 package com.util.api.rest;
 
-import com.util.func.GsonUtil;
+import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
 import java.util.HashMap;
 
@@ -21,6 +21,6 @@ public abstract class BaseRequest implements IRequest {
 
     @Override
     public String getRequest() {
-        return GsonUtil.getInstance(logger).to(properties);
+        return GsonUtils.getInstance(logger).to(properties);
     }
 }

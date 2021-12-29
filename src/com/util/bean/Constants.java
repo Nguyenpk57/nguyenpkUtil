@@ -12,8 +12,8 @@ package com.util.bean;
 public class Constants {
 
     public class Config {
-        public static final String DEFAULT_BUNDLE = "com/util/properties/config";
-        public static final String DEFAULT_PROPERTIES = "com/util/properties/config.properties";
+        public static final String DEFAULT_BUNDLE = "nguyenpkUtil/src/com/util/properties/language/Language_en.properties";
+        public static final String DEFAULT_PROPERTIES = "nguyenpkUtil/src/com/util/properties/config.properties";
         public static final String DOM_CONFIGURATOR_LOG_PATH =  "nguyenpkUtil/src/com/util/logger/export/config/log4j.xml";
     }
 

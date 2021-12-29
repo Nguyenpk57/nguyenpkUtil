@@ -132,4 +132,55 @@ public class CommonWebService {
         }
         return result;
     }
+
+    /** template example
+    <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+       <S:Body>
+          <ns2:gwOperationResponse xmlns:ns2="http://webservice.bccsgw.viettel.com/">
+             <Result>
+                <error>0</error>
+                <description>success</description>
+                <return/>
+                <original><![CDATA[<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns2:CheckDebtOfStaffResponse xmlns:ns2="http://com.viettel.smws/"><return><deuda><detalle /><moneda>SOLES</moneda><monto>0.0</monto><sistema>BCCS</sistema></deuda><deuda><detalle>Detalle: Máy tính xách tay HP 15-DB0009LA bộ xử lý RIZEN 3 - RAM 8GB, HDD 1T, 15.6"|Laptop HP 15-DB0009LA Processor RIZEN 3 - RAM 8GB , HDD 1T , 15.6 Inch. Cantidad: 1.0. Estado: Đang sử dụng.
+                </detalle><sistema>SmartOffice</sistema></deuda><errorCode>R002</errorCode><errorMsg>EXIST DEBT IN SYSTEM</errorMsg><staffCode>THUANNH_VTP</staffCode><staffName>Nguyen Huu Thuan</staffName></return></ns2:CheckDebtOfStaffResponse></S:Body></S:Envelope>]]></original>
+             </Result>
+          </ns2:gwOperationResponse>
+       </S:Body>
+    </S:Envelope>
+    */
+
+//    public String parseBccsGwResult(String response) throws Exception {
+//        String result = "";
+//        try {
+//            MessageFactory mf = MessageFactory.newInstance();
+//            // Create a message.  This example works with the SOAPPART.
+//            SOAPMessage soapMsg = mf.createMessage();
+//            SOAPPart part = soapMsg.getSOAPPart();
+//
+//            //InputStream is = new ByteArrayInputStream(response.getBytes());
+//            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+//            dbf.setNamespaceAware(true);
+//            DocumentBuilder builder = dbf.newDocumentBuilder();
+//            InputSource is = new InputSource(new StringReader(response));
+//            Document document = builder.parse(is);
+//            DOMSource domSource = new DOMSource(document);
+//            part.setContent(domSource);
+//
+//            DOMImplementationLS domImplLS = (DOMImplementationLS) document.getImplementation();
+//            LSSerializer serializer = domImplLS.createLSSerializer();
+//            Object element = soapMsg.getSOAPBody().getChildElements().next();
+//            if (element instanceof com.sun.xml.messaging.saaj.soap.impl.TextImpl) {
+//                com.sun.xml.messaging.saaj.soap.impl.TextImpl resResultSet = (com.sun.xml.messaging.saaj.soap.impl.TextImpl) soapMsg.getSOAPBody().getChildElements().next();
+//                result = serializer.writeToString(resResultSet);
+//            } else {
+//                SOAPElement resResultSet = (SOAPElement) soapMsg.getSOAPBody().getChildElements().next();
+//                result = serializer.writeToString(resResultSet);
+//            }
+//
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//
+//        return result;
+//    }
 }

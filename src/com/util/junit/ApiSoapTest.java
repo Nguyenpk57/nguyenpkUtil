@@ -1,7 +1,7 @@
 package com.util.junit;
 
 import com.util.api.soap.CommonWebService;
-import com.util.func.GsonUtil;
+import com.util.func.GsonUtils;
 import com.util.junit.bean.ApiSoapTestResponse;
 
 /**
@@ -33,7 +33,7 @@ public class ApiSoapTest {
                 .replaceAll("</ns2:getShopOfStaffResponse>", " </getShopOfStaffResponse>");
         ApiSoapTestResponse res = (ApiSoapTestResponse) CommonWebService.unmarshal(response, ApiSoapTestResponse.class);
 
-        System.out.println("ApiSoapTestResponse res: " + GsonUtil.getInstance().to(res));
+        System.out.println("ApiSoapTestResponse res: " + GsonUtils.getInstance().to(res));
 
         /*** <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
         *   <S:Body>

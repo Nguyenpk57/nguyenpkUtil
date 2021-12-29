@@ -5,7 +5,7 @@
  */
 package com.util.junit.bean;
 
-import com.util.bean.Result;
+import com.util.func.response.Result;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,7 +1,8 @@
 package com.util.func.cache;
 
-import com.util.func.FileConfigUtils;
-import com.util.func.GsonUtil;
+import com.util.bean.Constants;
+import com.util.func.config.FileConfigUtils;
+import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
 import org.apache.commons.lang3.BooleanUtils;
@@ -74,7 +75,7 @@ public class CacheBusiness {
 
     private void initialization() {
         try {
-            useCache = BooleanUtils.toBoolean((FileConfigUtils.getInstance().getValue("use_cache_data")));
+            useCache = BooleanUtils.toBoolean((FileConfigUtils.getInstance().getValue(Constants.USE_CACHE_DATA)));
         } catch (Exception ex) {
             useCache = false;
             logger.error(ex.getMessage(), ex);
@@ -100,7 +101,7 @@ public class CacheBusiness {
         } catch (Throwable ex) {
             logger.error(ex.getMessage(), ex);
         } finally {
-            logger.infos("setCache ----", "key", key, "resultRemoveCache", GsonUtil.getInstance().to(resultRemoveCache), "result", GsonUtil.getInstance().to(result));
+            logger.infos("setCache ----", "key", key, "resultRemoveCache", GsonUtils.getInstance().to(resultRemoveCache), "result", GsonUtils.getInstance().to(result));
         }
         return result;
     }
@@ -129,7 +130,7 @@ public class CacheBusiness {
         } catch (Throwable ex) {
             logger.error(ex.getMessage(), ex);
         } finally {
-            logger.infos("clearCache ----", "key", key, "result", GsonUtil.getInstance().to(result));
+            logger.infos("clearCache ----", "key", key, "result", GsonUtils.getInstance().to(result));
         }
         return result;
     }
@@ -149,7 +150,7 @@ public class CacheBusiness {
         } catch (Throwable ex) {
             logger.error(ex.getMessage(), ex);
         } finally {
-            logger.infos("getCache ----", "key", key, "result", GsonUtil.getInstance().to(result));
+            logger.infos("getCache ----", "key", key, "result", GsonUtils.getInstance().to(result));
         }
         return result;
     }

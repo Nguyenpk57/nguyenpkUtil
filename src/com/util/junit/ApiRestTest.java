@@ -7,7 +7,7 @@ package com.util.junit;
 
 import com.util.api.rest.IRequest;
 import com.util.api.rest.RequestImpl;
-import com.util.func.GsonUtil;
+import com.util.func.GsonUtils;
 import com.util.junit.bean.ApiRestTestResponse;
 
 import java.util.HashMap;
@@ -38,9 +38,9 @@ public class ApiRestTest {
                 .setUrl("http://10.121.14.195:8054/mibitel/anni7Th/buyPackageLife")
                 .setMethod(IRequest.POST)
                 .setHeader("Content-Type", "application/json")
-                .setEntity(GsonUtil.getInstance().to(entity))
+                .setEntity(GsonUtils.getInstance().to(entity))
                 .execute();
-        ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtil.getInstance().from(response, ApiRestTestResponse.class);
-        System.out.println("ApiRestTest responseCode: " + GsonUtil.getInstance().to(resObj));
+        ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtils.getInstance().from(response, ApiRestTestResponse.class);
+        System.out.println("ApiRestTest responseCode: " + GsonUtils.getInstance().to(resObj));
     }
 }

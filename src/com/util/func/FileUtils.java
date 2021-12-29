@@ -8,7 +8,7 @@ package com.util.func;
 import com.util.bean.FileBean;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
-import com.util.bean.Result;
+import com.util.func.response.Result;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -91,7 +91,7 @@ public class FileUtils {
     }
 
     public String catchPath(String path, Date runTime, String pattern, String separator) {
-        return catchPath(path, DateTimeUtil.getInstance().format(runTime, pattern), separator);
+        return catchPath(path, DateTimeUtils.getInstance().format(runTime, pattern), separator);
     }
 
     public String catchPath(String path, String subPath, String separator) {
@@ -342,7 +342,7 @@ public class FileUtils {
         } finally {
             result.put("folder", folder);
             result.setMessage(result.getMessage(language));
-            logger.info("FileUtils.copy:[" + sourcePath + "] to [" + targetPath + "];result=" + GsonUtil.getInstance(logger).to(result));
+            logger.info("FileUtils.copy:[" + sourcePath + "] to [" + targetPath + "];result=" + GsonUtils.getInstance(logger).to(result));
         }
         return result;
     }
@@ -443,7 +443,7 @@ public class FileUtils {
             result.put("sourcePath", sourcePath);
             result.put("child", (child == null ? null : child.getName()));
             result.put("targetPath", targetPath);
-            logger.info("FileUtils.copyOne:result=" + GsonUtil.getInstance(logger).to(result));
+            logger.info("FileUtils.copyOne:result=" + GsonUtils.getInstance(logger).to(result));
         }
         return result;
     }

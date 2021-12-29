@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author nguyenpk
@@ -625,7 +624,7 @@ public class ReflectUtils {
             if (String.class.equals(field.getType())) {
                 try {
                     String value = (String) getValue(obj, getGetter(clazz, field));
-                    setValue(obj, StringUtils.trim(value), getSetter(clazz, field));
+                    setValue(obj, org.apache.commons.lang3.StringUtils.trim(value), getSetter(clazz, field));
                 } catch (Exception ex) {
                     logger.error(ex.getMessage(), ex);
                 }
@@ -652,7 +651,7 @@ public class ReflectUtils {
                 for (Field field : fields) {
                     Object objectValue = getValue(obj, getGetter(clazz, field));
                     if (objectValue instanceof String) {
-                        setValue(obj, StringUtil.getInstance().trimXmlTag(StringUtils.stripAccents((String) objectValue)), getSetter(clazz, field));
+                        setValue(obj, StringUtils.getInstance().trimXmlTag(org.apache.commons.lang3.StringUtils.stripAccents((String) objectValue)), getSetter(clazz, field));
                     }
                 }
             }

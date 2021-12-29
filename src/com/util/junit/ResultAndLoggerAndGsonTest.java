@@ -6,10 +6,10 @@
 package com.util.junit;
 
 import com.util.junit.bean.ResponseObj;
-import com.util.func.GsonUtil;
+import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
-import com.util.bean.Result;
+import com.util.func.response.Result;
 
 /**
  * @author nguyenpk
@@ -33,17 +33,17 @@ public class ResultAndLoggerAndGsonTest {
         //check message config in Language file
         result = new Result(false, "R0002", "R0002");
         Result prRs1 = new Result("en", result);
-        logger.infos("Result prRs1: ", GsonUtil.getInstance().to(prRs1));
+        logger.infos("Result prRs1: ", GsonUtils.getInstance().to(prRs1));
 
         //check argument in message content
         result = new Result(false, "R0002", "R0002", "param_1", "param_2");
         Result prRs2 = new Result("en", result);
-        logger.infos("Result prRs2: ", GsonUtil.getInstance().to(prRs2));
+        logger.infos("Result prRs2: ", GsonUtils.getInstance().to(prRs2));
 
         //response object in last layer
-        result.put("className", "TestResponse");
+        result.put("className", "responseLastLayer");
         ResponseObj res = new ResponseObj(result);
         res.setName((String) result.get("className"));
-        logger.infos("TestResponse res: ", GsonUtil.getInstance().to(res));
+        logger.infos("TestResponse res: ", GsonUtils.getInstance().to(res));
     }
 }

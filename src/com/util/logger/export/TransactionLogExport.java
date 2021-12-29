@@ -2,8 +2,8 @@ package com.util.logger.export;
 
 import com.util.api.rest.IRequest;
 import com.util.api.rest.RequestImpl;
-import com.util.func.DateTimeUtil;
-import com.util.func.GsonUtil;
+import com.util.func.DateTimeUtils;
+import com.util.func.GsonUtils;
 import com.util.junit.bean.ApiRestTestResponse;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
@@ -30,19 +30,19 @@ public class TransactionLogExport {
         entity.put("packageCode", "ANI10");
         entity.put("privateKey", "gSmP5[k'j3S(A%z4");
 
-        String request = GsonUtil.getInstance().to(entity);
-        String startDate = DateTimeUtil.getInstance().formatddMMyyyyHHmmss(new Date());
+        String request = GsonUtils.getInstance().to(entity);
+        String startDate = DateTimeUtils.getInstance().formatddMMyyyyHHmmss(new Date());
         Long startTime = System.currentTimeMillis();
 
         String response = new RequestImpl()
                 .setUrl("http://10.121.14.195:8054/mibitel/anni7Th/buyPackageLife")
                 .setMethod(IRequest.POST)
                 .setHeader("Content-Type", "application/json")
-                .setEntity(GsonUtil.getInstance().to(entity))
+                .setEntity(GsonUtils.getInstance().to(entity))
                 .execute();
-        ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtil.getInstance().from(response, ApiRestTestResponse.class);
+        ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtils.getInstance().from(response, ApiRestTestResponse.class);
 
-        String endDate = DateTimeUtil.getInstance().formatddMMyyyyHHmmss(new Date());
+        String endDate = DateTimeUtils.getInstance().formatddMMyyyyHHmmss(new Date());
         Long elapsedTime = System.currentTimeMillis() - startTime;
 
         exportTransactionLogs(request, response, startDate, endDate, elapsedTime);
