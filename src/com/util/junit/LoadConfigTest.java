@@ -4,6 +4,7 @@ import com.util.bean.Constants;
 import com.util.func.config.FileConfigUtils;
 import com.util.func.config.PropertiesUtils;
 import com.util.func.config.ResourceUtils;
+import com.util.func.message.MessageUtils;
 
 public class LoadConfigTest {
     public static void main(String[] args) throws Exception {
@@ -22,8 +23,7 @@ public class LoadConfigTest {
         /**
          * ResourceUtils
          */
-        String r0000 = ResourceUtils.getInstance().getResourceDefault("R0000");
+        String r0000 = ResourceUtils.getInstance().getResource(Constants.Config.DEFAULT_BUNDLE, "R0000");
         System.out.println("ResourceUtils r0000: " + r0000);
-
     }
 }
