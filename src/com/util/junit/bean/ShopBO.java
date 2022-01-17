@@ -25,7 +25,7 @@ import lombok.Setter;
     "shopId",
     "shopName"
 })
-class ShopBO {
+public class ShopBO {
 
     protected Long channelTypeId;
     protected String shopAddress;

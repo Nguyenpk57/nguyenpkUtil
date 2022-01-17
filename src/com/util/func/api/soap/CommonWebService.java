@@ -1,4 +1,4 @@
-package com.util.api.soap;
+package com.util.func.api.soap;
 
 import java.io.StringReader;
 import java.io.StringWriter;

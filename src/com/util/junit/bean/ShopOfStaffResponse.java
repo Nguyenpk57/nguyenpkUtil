@@ -24,7 +24,7 @@ import lombok.Setter;
     "message",
     "shopBO"
 })
-class ShopOfStaffResponse {
+public class ShopOfStaffResponse {
 
     protected String code;
     protected String message;

@@ -5,8 +5,8 @@
  */
 package com.util.junit;
 
-import com.util.api.rest.IRequest;
-import com.util.api.rest.RequestImpl;
+import com.util.func.api.rest.IRequest;
+import com.util.func.api.rest.RequestImpl;
 import com.util.func.GsonUtils;
 import com.util.junit.bean.ApiRestTestResponse;
 

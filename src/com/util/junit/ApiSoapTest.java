@@ -1,6 +1,6 @@
 package com.util.junit;
 
-import com.util.api.soap.CommonWebService;
+import com.util.func.api.soap.CommonWebService;
 import com.util.func.GsonUtils;
 import com.util.junit.bean.ApiSoapTestResponse;
 
