@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.junit;
+package test;
 
-import com.util.junit.bean.ResponseObj;
+import test.bean.ResponseObj;
 import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;

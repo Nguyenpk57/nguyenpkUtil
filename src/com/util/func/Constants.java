@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.bean;
+package com.util.func;
 
 /**
  * @author nguyenpk
@@ -12,7 +12,7 @@ package com.util.bean;
 public class Constants {
 
     public class Config {
-        public static final String DEFAULT_BUNDLE = "com/util/properties/language/Language_en";
+        public static final String DEFAULT_BUNDLE = "properties/language/Language_en";
         public static final String DEFAULT_PROPERTIES = "nguyenpkUtil/src/com/util/properties/config.properties";
         public static final String DOM_CONFIGURATOR_LOG_PATH =  "nguyenpkUtil/src/com/util/logger/export/config/log4j.xml";
     }

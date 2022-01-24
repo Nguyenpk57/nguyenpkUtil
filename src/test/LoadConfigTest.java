@@ -1,10 +1,9 @@
-package com.util.junit;
+package test;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import com.util.func.config.FileConfigUtils;
 import com.util.func.config.PropertiesUtils;
 import com.util.func.config.ResourceUtils;
-import com.util.func.message.MessageUtils;
 
 public class LoadConfigTest {
     public static void main(String[] args) throws Exception {

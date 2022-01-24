@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.junit.bean;
+package test.bean;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,14 +17,19 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getShopOfStaffResponse", propOrder = {
-    "_return"
+@XmlType(name = "shopBO", propOrder = {
+    "channelTypeId",
+    "shopAddress",
+    "shopCode",
+    "shopId",
+    "shopName"
 })
-@XmlRootElement(name = "getShopOfStaffResponse")
-public class ApiSoapTestResponse {
-    
-    @XmlElement(name = "return")
-    protected ShopOfStaffResponse _return;
+public class ShopBO {
+
+    protected Long channelTypeId;
+    protected String shopAddress;
+    protected String shopCode;
+    protected Long shopId;
+    protected String shopName;
 }

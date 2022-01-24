@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.junit;
+package test;
 
 import com.util.func.api.rest.IRequest;
 import com.util.func.api.rest.RequestImpl;
 import com.util.func.GsonUtils;
-import com.util.junit.bean.ApiRestTestResponse;
+import test.bean.ApiRestTestResponse;
 
 import java.util.HashMap;
 

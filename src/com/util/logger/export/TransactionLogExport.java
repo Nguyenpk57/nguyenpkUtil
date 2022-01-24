@@ -4,7 +4,7 @@ import com.util.func.api.rest.IRequest;
 import com.util.func.api.rest.RequestImpl;
 import com.util.func.DateTimeUtils;
 import com.util.func.GsonUtils;
-import com.util.junit.bean.ApiRestTestResponse;
+import test.bean.ApiRestTestResponse;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
 

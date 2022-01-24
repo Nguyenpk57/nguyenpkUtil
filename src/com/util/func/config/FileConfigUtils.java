@@ -1,6 +1,6 @@
 package com.util.func.config;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;

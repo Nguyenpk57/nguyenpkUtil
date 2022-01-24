@@ -1,4 +1,4 @@
-package com.util.func.cache;
+package com.util.func.cache.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Config extends BaseEntity {
+public class Param extends BaseEntity {
     private Integer paramId;
     private String paramGroup;
     private String paramCode;

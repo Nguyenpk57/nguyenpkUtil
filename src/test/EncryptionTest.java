@@ -1,4 +1,4 @@
-package com.util.junit;
+package test;
 
 import com.util.func.encryption.MD5;
 import com.util.func.encryption.SHA1;

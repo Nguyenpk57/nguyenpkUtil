@@ -1,4 +1,4 @@
-package com.util.func.cache;
+package com.util.func.cache.entity;
 
 import java.util.HashMap;
 

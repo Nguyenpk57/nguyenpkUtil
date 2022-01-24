@@ -1,6 +1,6 @@
-package com.util.junit;
+package test;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import com.util.func.message.MessageUtils;
 
 public class MessageUtilsTest {

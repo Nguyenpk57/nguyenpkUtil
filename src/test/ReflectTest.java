@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.junit;
+package test;
 
 import com.util.func.GsonUtils;
 import com.util.func.ReflectUtils;
-import com.util.junit.bean.ReflectInnerObj;
-import com.util.junit.bean.ReflectObj;
+import test.bean.ReflectInnerObj;
+import test.bean.ReflectObj;
 
 /**
  * @author nguyenpk

@@ -1,5 +1,8 @@
-package com.util.func.cache;
+package com.util.func.cache.service.impl;
 
+import com.util.func.cache.service.IParamService;
+import com.util.func.cache.entity.Param;
+import com.util.func.cache.session.ISession;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
 
@@ -9,15 +12,15 @@ import java.util.List;
  * @author nguyenpk
  * @since 2021-12-23
  */
-public class ParamBusinessImpl implements IParamBusiness {
+public class ParamServiceImpl implements IParamService {
 
     private ILogger logger;
 
-    public ParamBusinessImpl() {
+    public ParamServiceImpl() {
         this.logger = LoggerImpl.getInstance(this.getClass());
     }
 
-    public ParamBusinessImpl(ILogger logger) {
+    public ParamServiceImpl(ILogger logger) {
         this.logger = logger;
     }
 
@@ -32,12 +35,12 @@ public class ParamBusinessImpl implements IParamBusiness {
     }
 
     @Override
-    public Config getConfig(ISession session, String paramCode) throws Exception {
+    public Param getConfig(ISession session, String paramCode) throws Exception {
         return null;
     }
 
     @Override
-    public List<Config> getConfigsByGroup(ISession session, String paramGroup) throws Exception {
+    public List<Param> getConfigsByGroup(ISession session, String paramGroup) throws Exception {
         return null;
     }
 

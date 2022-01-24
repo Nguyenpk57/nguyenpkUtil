@@ -5,7 +5,7 @@
  */
 package com.util.func.message;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import com.util.func.StringUtils;
 import com.util.func.config.PropertiesUtils;
 import com.util.func.config.ResourceUtils;

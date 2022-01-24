@@ -5,7 +5,7 @@
  */
 package com.util.func.response;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import com.util.bean.Stack;
 import com.util.func.message.MessageUtils;
 import java.io.PrintWriter;

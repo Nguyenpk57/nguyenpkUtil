@@ -1,4 +1,4 @@
-package com.util.func.cache;
+package com.util.func.cache.session;
 
 /**
  * @author nguyenpk

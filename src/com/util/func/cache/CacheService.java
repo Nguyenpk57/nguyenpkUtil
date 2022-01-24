@@ -1,6 +1,10 @@
 package com.util.func.cache;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
+import com.util.func.cache.service.IParamService;
+import com.util.func.cache.service.impl.ParamServiceImpl;
+import com.util.func.cache.entity.Param;
+import com.util.func.cache.session.ISession;
 import com.util.func.config.FileConfigUtils;
 import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
@@ -14,11 +18,11 @@ import java.util.List;
  * @author nguyenpk
  * @since 2021-12-23
  */
-public class CacheBusiness {
+public class CacheService {
 
     private static final Object LOCK = new Object();
-    private static CacheBusiness instance;
-    private static HashMap<String, CacheBusiness> instances;
+    private static CacheService instance;
+    private static HashMap<String, CacheService> instances;
     protected ILogger logger;
     protected static HashMap map = new HashMap();
     protected boolean useCache;
@@ -31,26 +35,26 @@ public class CacheBusiness {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="instance">
-    private CacheBusiness() {
+    private CacheService() {
         logger = LoggerImpl.getInstance(this.getClass());
         initialization();
     }
 
-    private CacheBusiness(ILogger logger) {
+    private CacheService(ILogger logger) {
         this.logger = logger;
         initialization();
     }
 
-    public static CacheBusiness getInstance() {
+    public static CacheService getInstance() {
         synchronized (LOCK) {
             if (instance == null) {
-                instance = new CacheBusiness();
+                instance = new CacheService();
             }
             return instance;
         }
     }
 
-    public static CacheBusiness getInstance(ILogger logger) {
+    public static CacheService getInstance(ILogger logger) {
         if (logger == null) {
             return getInstance();
         }
@@ -64,10 +68,10 @@ public class CacheBusiness {
         }
         synchronized (LOCK) {
             if (instances == null) {
-                instances = new HashMap<String, CacheBusiness>();
+                instances = new HashMap<String, CacheService>();
             }
             if (!instances.containsKey(name)) {
-                instances.put(name, new CacheBusiness(logger));
+                instances.put(name, new CacheService(logger));
             }
             return instances.get(name);
         }
@@ -157,7 +161,7 @@ public class CacheBusiness {
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="load config">
-    /*  TABLE: CONFIG
+    /*  TABLE: PARAM
         PARAM_ID
         PARAM_GROUP
         PARAM_CODE  --UNIQUE
@@ -169,8 +173,8 @@ public class CacheBusiness {
         UPDATE_USER
         UPDATE_TIME
     */
-    public Config getConfig(ISession session, String paramCode) {
-        Config result = null;
+    public Param getConfig(ISession session, String paramCode) {
+        Param result = null;
         if (paramCode == null) {
             return result;
         }
@@ -180,17 +184,17 @@ public class CacheBusiness {
         }
         try {
             if (!useCache) {
-                IParamBusiness business = new ParamBusinessImpl(logger);
+                IParamService business = new ParamServiceImpl(logger);
                 result = business.getConfig(session, paramCode);
                 return result;
             }
             synchronized (LOCK) {
-                HashMap<String, Config> m = (HashMap<String, Config>) map.get(CONFIG_CODE);
+                HashMap<String, Param> m = (HashMap<String, Param>) map.get(CONFIG_CODE);
                 if (m == null) {
-                    m = new HashMap<String, Config>();
+                    m = new HashMap<String, Param>();
                 }
                 if (!m.containsKey(paramCode)) {
-                    IParamBusiness business = new ParamBusinessImpl(logger);
+                    IParamService business = new ParamServiceImpl(logger);
                     result = business.getConfig(session, paramCode);
                     m.put(paramCode, result);
                     map.put(CONFIG_CODE, m);
@@ -205,8 +209,8 @@ public class CacheBusiness {
         return result;
     }
 
-    public List<Config> getConfigs(ISession session, String paramGroup) {
-        List<Config> result = null;
+    public List<Param> getConfigs(ISession session, String paramGroup) {
+        List<Param> result = null;
         if (paramGroup == null) {
             return result;
         }
@@ -216,17 +220,17 @@ public class CacheBusiness {
         }
         try {
             if (!useCache) {
-                IParamBusiness business = new ParamBusinessImpl(logger);
+                IParamService business = new ParamServiceImpl(logger);
                 result = business.getConfigsByGroup(session, paramGroup);
                 return result;
             }
             synchronized (LOCK) {
-                HashMap<String, List<Config>> m = (HashMap<String, List<Config>>) map.get(CONFIG_GROUP);
+                HashMap<String, List<Param>> m = (HashMap<String, List<Param>>) map.get(CONFIG_GROUP);
                 if (m == null) {
-                    m = new HashMap<String, List<Config>>();
+                    m = new HashMap<String, List<Param>>();
                 }
                 if (!m.containsKey(paramGroup)) {
-                    IParamBusiness business = new ParamBusinessImpl(logger);
+                    IParamService business = new ParamServiceImpl(logger);
                     result = business.getConfigsByGroup(session, paramGroup);
                     m.put(paramGroup, result);
                     map.put(CONFIG_GROUP, m);
@@ -254,7 +258,7 @@ public class CacheBusiness {
         }
         try {
             if (!useCache) {
-                IParamBusiness business = new ParamBusinessImpl(logger);
+                IParamService business = new ParamServiceImpl(logger);
                 result = business.getValueByCode(session, paramCode);
                 return result;
             }
@@ -264,7 +268,7 @@ public class CacheBusiness {
                     m = new HashMap<String, String>();
                 }
                 if (!m.containsKey(paramCode)) {
-                    IParamBusiness business = new ParamBusinessImpl(logger);
+                    IParamService business = new ParamServiceImpl(logger);
                     result = business.getValueByCode(session, paramCode);
                     m.put(paramCode, result);
                     map.put(PARAM_CODE_VALUES, m);
@@ -290,7 +294,7 @@ public class CacheBusiness {
         }
         try {
             if (!useCache) {
-                IParamBusiness business = new ParamBusinessImpl(logger);
+                IParamService business = new ParamServiceImpl(logger);
                 result = business.getValuesByGroup(session, paramGroup);
                 return result;
             }
@@ -300,7 +304,7 @@ public class CacheBusiness {
                     m = new HashMap<String, List<String>>();
                 }
                 if (!m.containsKey(paramGroup)) {
-                    IParamBusiness business = new ParamBusinessImpl(logger);
+                    IParamService business = new ParamServiceImpl(logger);
                     result = business.getValuesByGroup(session, paramGroup);
                     m.put(paramGroup, result);
                     map.put(PARAM_GROUP_VALUES, m);

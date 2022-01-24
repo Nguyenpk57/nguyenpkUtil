@@ -5,7 +5,7 @@
  */
 package com.util.func.config;
 
-import com.util.bean.Constants;
+import com.util.func.Constants;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 import org.apache.commons.lang3.StringUtils;

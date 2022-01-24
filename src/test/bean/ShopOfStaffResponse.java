@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.util.junit.bean;
+package test.bean;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -17,19 +17,16 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "shopBO", propOrder = {
-    "channelTypeId",
-    "shopAddress",
-    "shopCode",
-    "shopId",
-    "shopName"
-})
-public class ShopBO {
 
-    protected Long channelTypeId;
-    protected String shopAddress;
-    protected String shopCode;
-    protected Long shopId;
-    protected String shopName;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "shopOfStaffResponse", propOrder = {
+    "code",
+    "message",
+    "shopBO"
+})
+public class ShopOfStaffResponse {
+
+    protected String code;
+    protected String message;
+    protected ShopBO shopBO;
 }
