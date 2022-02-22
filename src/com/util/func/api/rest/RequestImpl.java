@@ -75,7 +75,7 @@ public class RequestImpl extends BaseRequest {
     }
 
     @Override
-    public IRequest setProxy(String host, Integer port) {
+    public IRequest setProxy(String host, String port) {
         HashMap proxy = (HashMap) properties.get(PROXY);
         if (proxy == null) {
             proxy = new HashMap();

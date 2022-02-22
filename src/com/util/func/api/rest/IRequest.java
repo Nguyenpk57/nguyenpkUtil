@@ -27,7 +27,7 @@ public interface IRequest {
 
     IRequest clear();
 
-    IRequest setProxy(String host, Integer port);
+    IRequest setProxy(String host, String port);
 
     IRequest setUrl(String url);
 
