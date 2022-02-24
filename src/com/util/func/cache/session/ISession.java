@@ -12,4 +12,6 @@ public interface ISession {
     void merge(Object newObj);
 
     void delete(Object obj);
+
+    Object createSQLQuery(String toString);
 }
