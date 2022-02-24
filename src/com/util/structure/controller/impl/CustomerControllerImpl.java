@@ -1,10 +1,10 @@
-package com.util.func.structure.controller.impl;
+package com.util.structure.controller.impl;
 
 import com.util.func.cache.session.ISession;
 import com.util.func.response.Result;
-import com.util.func.structure.controller.ICustomerController;
-import com.util.func.structure.service.ICustomerService;
-import com.util.func.structure.service.impl.CustomerServiceImpl;
+import com.util.structure.controller.ICustomerController;
+import com.util.structure.service.ICustomerService;
+import com.util.structure.service.impl.CustomerServiceImpl;
 import com.util.logger.LoggerImpl;
 
 import java.util.Calendar;

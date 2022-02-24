@@ -1,4 +1,4 @@
-package com.util.func.structure.service;
+package com.util.structure.service;
 
 import java.util.List;
 

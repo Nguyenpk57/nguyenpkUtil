@@ -1,4 +1,4 @@
-package com.util.func.structure.DTO;
+package com.util.structure.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

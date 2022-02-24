@@ -1,4 +1,4 @@
-package com.util.func.structure.controller;
+package com.util.structure.controller;
 
 import com.util.func.cache.session.ISession;
 import com.util.func.response.Result;

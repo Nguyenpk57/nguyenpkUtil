@@ -1,7 +1,7 @@
-package com.util.func.structure.service.impl;
+package com.util.structure.service.impl;
 
-import com.util.func.structure.repository.IRepository;
-import com.util.func.structure.service.IService;
+import com.util.structure.repository.IRepository;
+import com.util.structure.service.IService;
 import com.util.logger.ILogger;
 
 import java.util.List;

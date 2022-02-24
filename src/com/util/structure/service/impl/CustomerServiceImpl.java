@@ -1,11 +1,11 @@
-package com.util.func.structure.service.impl;
+package com.util.structure.service.impl;
 
 import com.util.func.GsonUtils;
 import com.util.func.cache.session.ISession;
 import com.util.func.response.Result;
-import com.util.func.structure.DTO.Customer;
-import com.util.func.structure.repository.impl.CustomerRepositoryImpl;
-import com.util.func.structure.service.ICustomerService;
+import com.util.structure.DTO.Customer;
+import com.util.structure.repository.impl.CustomerRepositoryImpl;
+import com.util.structure.service.ICustomerService;
 import com.util.logger.LoggerImpl;
 
 import java.util.List;

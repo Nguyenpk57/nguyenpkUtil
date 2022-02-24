@@ -1,6 +1,6 @@
-package com.util.func.structure.controller.impl;
+package com.util.structure.controller.impl;
 
-import com.util.func.structure.service.IService;
+import com.util.structure.service.IService;
 import com.util.logger.ILogger;
 
 public abstract class BaseController {

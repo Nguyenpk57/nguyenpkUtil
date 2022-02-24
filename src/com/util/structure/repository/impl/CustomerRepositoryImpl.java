@@ -1,9 +1,9 @@
-package com.util.func.structure.repository.impl;
+package com.util.structure.repository.impl;
 
 import com.util.func.cache.session.ISession;
-import com.util.func.structure.DTO.Customer;
-import com.util.func.structure.repository.ICustomerRepository;
-import com.util.func.structure.service.IService;
+import com.util.structure.DTO.Customer;
+import com.util.structure.repository.ICustomerRepository;
+import com.util.structure.service.IService;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;
 

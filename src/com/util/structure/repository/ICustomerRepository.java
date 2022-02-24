@@ -1,7 +1,7 @@
-package com.util.func.structure.repository;
+package com.util.structure.repository;
 
 import com.util.func.cache.session.ISession;
-import com.util.func.structure.DTO.Customer;
+import com.util.structure.DTO.Customer;
 
 import java.util.List;
 

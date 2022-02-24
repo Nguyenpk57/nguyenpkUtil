@@ -1,4 +1,4 @@
-package com.util.func.structure.repository;
+package com.util.structure.repository;
 
 import com.util.func.cache.session.ISession;
 
