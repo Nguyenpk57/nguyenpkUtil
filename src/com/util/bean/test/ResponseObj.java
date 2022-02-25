@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.bean;
+package com.util.bean.test;
 
-import java.util.List;
+import com.util.func.response.Result;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +15,14 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class ApiRestTestResponse {
-    String responseCode;
-    String responseMessage;
-    List<Object> responseError;
+public class ResponseObj extends Result {
+
+    String name;
+
+    public ResponseObj() {
+    }
+
+    public ResponseObj(Result rs) {
+        super(rs);
+    }
 }

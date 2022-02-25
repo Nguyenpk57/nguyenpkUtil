@@ -1,8 +1,8 @@
-package test;
+package main;
 
 import com.util.func.api.soap.CommonWebService;
 import com.util.func.GsonUtils;
-import test.bean.ApiSoapTestResponse;
+import com.util.bean.test.ApiSoapTestResponse;
 
 /**
  * @author nguyenpk

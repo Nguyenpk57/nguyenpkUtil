@@ -1,11 +1,10 @@
-/*
+package main;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
 
-import test.bean.ResponseObj;
+import com.util.bean.test.ResponseObj;
 import com.util.func.GsonUtils;
 import com.util.logger.ILogger;
 import com.util.logger.LoggerImpl;

@@ -1,4 +1,4 @@
-package test;
+package main;
 
 import com.util.func.Constants;
 import com.util.func.config.FileConfigUtils;
@@ -11,7 +11,7 @@ public class LoadConfigTest {
          * FileConfigUtils
          */
         String useCacheDataFileCfg = FileConfigUtils.getInstance().getValue(Constants.USE_CACHE_DATA);
-        System.out.println("LoadConfigTest useCacheData: " + useCacheDataFileCfg);
+        System.out.println("main.LoadConfigTest useCacheData: " + useCacheDataFileCfg);
 
         /**
          * PropertiesUtils

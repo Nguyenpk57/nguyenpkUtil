@@ -1,16 +1,12 @@
-/*
+package main;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
 
 import com.util.func.api.rest.IRequest;
 import com.util.func.api.rest.RequestImpl;
 import com.util.func.GsonUtils;
-import test.bean.ApiRestTestResponse;
-
-import java.util.HashMap;
 
 /**
  * @author nguyenpk
@@ -41,7 +37,7 @@ public class ApiRestTest {
 //                .setEntity(GsonUtils.getInstance().to(entity))
 //                .execute();
 //        ApiRestTestResponse resObj = (ApiRestTestResponse) GsonUtils.getInstance().from(response, ApiRestTestResponse.class);
-//        System.out.println("ApiRestTest responseCode: " + GsonUtils.getInstance().to(resObj));
+//        System.out.println("main.ApiRestTest responseCode: " + GsonUtils.getInstance().to(resObj));
 //        setUrl("http://api.ipapi.com/api/132.157.131.238?access_key=b87d31f32f07eaf55579b3c089a2c9ba&format=1c")
 
         IRequest request = new RequestImpl();
@@ -53,7 +49,7 @@ public class ApiRestTest {
                 .addParam("format", "1c")
                 .execute();
 
-        System.out.println("ApiRestTest responseCode: " + GsonUtils.getInstance().to(response));
+        System.out.println("main.ApiRestTest responseCode: " + GsonUtils.getInstance().to(response));
 
     }
 }

@@ -1,4 +1,4 @@
-package test;
+package main;
 
 import com.util.func.Constants;
 import com.util.func.message.MessageUtils;

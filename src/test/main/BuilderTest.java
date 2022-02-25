@@ -1,4 +1,4 @@
-package test;
+package main;
 
 import com.util.func.GsonUtils;
 import com.util.func.builder.Entity;
