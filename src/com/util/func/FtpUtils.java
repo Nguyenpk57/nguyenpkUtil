@@ -13,6 +13,10 @@ import java.util.Properties;
 import java.util.Vector;
 import java.util.regex.Pattern;
 
+/**
+ * @author nguyenpk
+ * @since 2022-03-07
+ */
 public class FtpUtils {
     private FTPClient ftpClient = null;
     private FTPFile[] lstFtpFiles = null;
