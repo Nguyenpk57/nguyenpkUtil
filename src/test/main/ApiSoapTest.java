@@ -8,7 +8,7 @@ import com.util.bean.test.ApiSoapTestResponse;
  * @author nguyenpk
  * @since 2021-10-22
  */
-public class ApiSoapTest {
+public class ApiSoapTest {  
 
     public static void main(String[] args) throws Exception {
         CommonWebService commonWebService = new CommonWebService();
