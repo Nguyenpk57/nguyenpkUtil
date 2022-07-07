@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ftp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/ftp/commons-net-ftp-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/ftp/jsch-0.1.55.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/ftp/commons-net-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

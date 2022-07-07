@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/api/httpcore-4.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/api/httpclient-4.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/api/webservices-rt-2.2.0-1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

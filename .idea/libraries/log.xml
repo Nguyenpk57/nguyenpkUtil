@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="log">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/log/apache-log4j-extras-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/log/junit4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
