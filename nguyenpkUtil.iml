@@ -16,5 +16,7 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="apache" level="project" />
     <orderEntry type="library" name="ftp" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="library" name="javaee-web-api-7.0" level="project" />
   </component>
 </module>
